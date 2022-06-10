@@ -1,0 +1,14 @@
+[Unit]
+Description=mopidy mqtt daemon
+After=network.target
+Wants=network.target
+
+[Service]
+WorkingDirectory=/home/djo/mopidy-mqtt
+ExecStart=/usr/bin/python3 /home/djo/mopidy-mqtt/main.py
+Restart=always
+RestartSec=30
+User=root
+
+[Install]
+WantedBy=multi-user.target
